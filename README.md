@@ -1,3 +1,4 @@
+# euroformix
 
 [![CRAN
 status](https://www.r-pkg.org/badges/version/euroformix)](https://cran.r-project.org/package=euroformix)
@@ -27,8 +28,7 @@ If you find a bug, please file a minimal reproducible example in the
 ``` r
 library(euroformix)
 
-hyptheses_fit <- contLikMLE(...)
-tidy(fit)
+hypothesis_fit <- contLikMLE(...)
 #> lots of documentation needed
 ```
 
