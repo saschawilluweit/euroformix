@@ -10,12 +10,16 @@ status](https://www.r-pkg.org/badges/version/euroformix)](https://cran.r-project
 ## Installation
 
 ``` r
-# to install just euroformix:
+# to install just euroformix
 install.packages("euroformix")
 
-# to get the development version from GitHub:
+# to get the latest version from GitHub:
 install.packages("devtools")
 devtools::install_github("saschawilluweit/euroformix")
+
+# to get a specific version from GitHub:
+install.packages("devtools")
+devtools::install_github("saschawilluweit/euroformix", ref = "v3.0.0")
 ```
 
 If you find a bug, please file a minimal reproducible example in the
