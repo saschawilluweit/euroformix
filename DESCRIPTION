@@ -20,14 +20,7 @@ Description: euroformix contains procedures for maximization, integration and MC
 License: GPL-3 + file LICENSE
 Depends: R (>= 3.0.1)
 LinkingTo: BH,Rcpp,RcppArmadillo
-Imports:
-    parallel,
-    data.table
-Suggests:
-    cubature,
-    forensim,
-    RCurl,
-    XML,
-    plotly
-    URL: https://github.com/saschawilluweit/euroformix
+Imports: parallel,data.table
+Suggests: cubature,forensim,RCurl,XML,plotly
+URL: https://github.com/saschawilluweit/euroformix
 BugReports: https://github.com/saschawilluweit/euroformix/issues
