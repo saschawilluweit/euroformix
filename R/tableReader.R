@@ -1,16 +1,19 @@
 #' @title tableReader
-#' @author Oyvind Bleka
-#' @description  A robust function for reading tables
-#' @details This function reads text based tables and recognizes which of the three common separates that are used.
+#' @author Oyvind Bleka, Sascha Willuweit
+#' @description  A function for reading tables in a streamlined way
+#' @details This function reads a text based table with a header and columns are separated by on of [,\t |;:]
 #' @export
- tableReader=function(filename,header=TRUE) {
-  readF <- function(...) { #read function
-   #require(data.table) #used to read very large files fast
-   #fread(...)
-   read.table(...)
+ tableReader=function(filename, kit_name = NULL) {
+  if (!file.exists(filename)) {
+    stop(paste0("Table '", filename, "' was not found."))
   }
-  tab <- readF(filename,header=header,sep="\t",stringsAsFactors=FALSE, check.names=FALSE)
-  tryCatch( {  if(ncol(tab)==1) tab <- readF(filename,header=header,sep=",",stringsAsFactors=FALSE, check.names=FALSE) } ,error=function(e) e) 
-  tryCatch( {  if(ncol(tab)==1) tab <- readF(filename,header=header,sep=";",stringsAsFactors=FALSE, check.names=FALSE) } ,error=function(e) e) 
-  return(tab) 
- }
+
+  suppressPackageStartupMessages(library("data.table", quietly = TRUE, character.only = TRUE))
+
+  t <- fread(filename, header = TRUE)
+
+  if (ncol(t) < 1 || length(names(t)) < 1) {
+    stop(paste0("Table '", filename, "' does not contain enough information or could not be parsed correctly."))
+  }
+  return(t)
+}
