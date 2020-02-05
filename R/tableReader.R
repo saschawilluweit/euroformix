@@ -10,7 +10,7 @@
 
   suppressPackageStartupMessages(library("data.table", quietly = TRUE, character.only = TRUE))
 
-  t <- fread(filename, header = TRUE)
+  t <- fread(filename, header = TRUE, data.table = FALSE, fill = TRUE, blank.lines.skip = TRUE, na.strings = "", encoding = "UTF-8")
 
   if (ncol(t) < 1 || length(names(t)) < 1) {
     stop(paste0("Table '", filename, "' does not contain enough information or could not be parsed correctly."))
