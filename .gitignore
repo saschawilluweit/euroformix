@@ -2,8 +2,9 @@
 .Rhistory
 .RData
 inst/doc
+ints/docs
 .DS_Store
 .httr-oauth
 docs/
-inst/
+doc/
 man/

@@ -1,14 +1,33 @@
 Package: euroformix
-Type: Package
-Title: Package for interpretation of quantitative DNA mixtures
-Version: 2.3.0
-Date: 2019-12-04
-Author: Oyvind Bleka <oyvble@hotmail.com>
-Maintainer: Oyvind Bleka <oyvble@hotmail.com>
-Description: euroformix contains procedures for maximization, integration and MCMC of likelihoods of a continuous model for replicated STR DNA mixtures for a general specifications of hypotheses. It also does deconvolution condition on the continuous model. The continuous model takes care of drop-out, drop-in, stutters and degradation. It also contains the graphicallayer efm.
-License: GPL(>=2)
+Title: STR DNA mixtures calculations based on continuous model
+Version: 3.0.0
+Authors@R: c(
+    person(given = "Oyvind",
+           family = "Bleka",
+           role = c("aut", "cre", "cph"),
+           email = "oyvble@hotmail.com",
+           comment = c(ORCID = "0000-0001-8456-1507")),
+    person(given = "Oskar",
+           family = "Hansson",
+           role = c("ctb"),
+           email = "oskhan@ous-hf.no"),
+    person(given = "Sascha",
+           family = "Willuweit",
+           role = c("ctb"),
+           email = "sascha.willuweit@charite.de",
+           comment = c(ORCID = "0000-0003-1844-8375")))
+Description: euroformix contains procedures for maximization, integration and MCMC of likelihoods of a continuous model for replicated STR DNA mixtures for a general specifications of hypotheses. It also does deconvolution condition on the continuous model. The continuous model takes care of drop-out, drop-in, stutters and degradation.
+License: GPL-3 + file LICENSE
 Depends: R (>= 3.0.1)
 LinkingTo: BH,Rcpp,RcppArmadillo
-Imports: gWidgets,gWidgetstcltk,parallel
-Suggests: cubature,forensim,RCurl,XML,plotly
-RoxygenNote: 6.1.1
+Imports:
+    parallel,
+    data.table
+Suggests:
+    cubature,
+    forensim,
+    RCurl,
+    XML,
+    plotly
+    URL: https://github.com/saschawilluweit/euroformix
+BugReports: https://github.com/saschawilluweit/euroformix/issues

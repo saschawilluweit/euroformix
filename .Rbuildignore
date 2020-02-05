@@ -3,7 +3,8 @@
 ^man-roxygen$
 ^revdep$
 ^cran-comments\.md$
-^README.md
+^README\.md$
+^LICENSE\.md$
 ^\.travis\.yml$
 ^CONDUCT\.md$
 ^\.github$
