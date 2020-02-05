@@ -14,7 +14,7 @@ getKit <- function(filename = NULL, kit_name = NULL) {
 
   kit <- tableReader(filename)
 
-  if (is.null(kit_name) {
+  if (is.null(kit_name)) {
     kit_name <- unique(kit$Short.Name)[1]
   } else if (!is.element(kit_name, unique(kit$Short.Name))) {
     stop(paste0("Kit '", kit_name, "' ist not known to kit_database '", filename, "'."))
