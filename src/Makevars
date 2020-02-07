@@ -1,3 +1,4 @@
 ## Use the R_HOME indirection to support installations of multiple R version
 PKG_LIBS = $(shell $(R_HOME)/bin/Rscript -e "Rcpp:::LdFlags()" ) $(LAPACK_LIBS) $(BLAS_LIBS) $(FLIBS)
-PKG_CXXFLAGS = -std=c++11 -Ofast
+PKG_CFLAGS = -Wall -Ofast
+PKG_CXXFLAGS = -O3 -std=c++11 -Wall
